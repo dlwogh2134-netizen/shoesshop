@@ -10,6 +10,7 @@ const Nike = (props) => {
                 className="w-4/5 h-auto rounded-xl shadow-sm mb-4 object-cover transform hover:scale-102 transition-transform duration-300"
                 alt='item2'
             />
+
             <h5 className="text-lg font-bold text-gray-900 tracking-tight">
                 {nike.title}
             </h5>

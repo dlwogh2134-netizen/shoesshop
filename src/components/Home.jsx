@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 import Product from './Product'
-import Title from './Title'
+import { Title } from './Title'
 import data2 from '../db/data2'
 import Nike from './Nike'
 import axios from 'axios'
 
-const Home = (props) => {
+export const Home = (props) => {
     const { shoes, setShoes } = props
     const [nike, setNike] = useState(data2)
-    const [count, setCount] = useState(1) 
+    const [count, setCount] = useState(1);
 
     const sort = (index) => {
         let copy = []
@@ -40,8 +40,9 @@ const Home = (props) => {
                 })
                 .catch(err => console.log(err))
         } else {
-            alert('더이상 상품이 없습니다.')
+            alert('더 이상 상품이 없습니다.')
         }
+
     }
 
     return (
@@ -51,8 +52,7 @@ const Home = (props) => {
             <Title tindex='1' />
 
             <div className="flex flex-wrap justify-center gap-2 mb-6">
-                <button className="border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white font-medium text-sm px-4 py-2 rounded transition-colors active:bg-blue-700" onClick={() => { sort('title') }
-                }>
+                <button className="border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white font-medium text-sm px-4 py-2 rounded transition-colors active:bg-blue-700" onClick={() => { sort('title') }}>
                     이름순 정렬
                 </button>
 
@@ -66,6 +66,7 @@ const Home = (props) => {
             </div>
 
             <div className="max-w-7xl mx-auto px-4 w-full">
+
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     {
                         shoes.map(shoe =>
@@ -73,11 +74,13 @@ const Home = (props) => {
                         )
                     }
                 </div>
+
             </div>
 
             <Title tindex='2' />
 
             <div className="flex justify-center my-6">
+
                 <button className="border border-green-600 text-green-600 hover:bg-green-600 hover:text-white font-medium text-sm px-5 py-2.5 rounded-lg transition-colors active:bg-green-700 shadow-sm" onClick={moreNike}>
                     + 3개 상품 더 보기
                 </button>
@@ -91,6 +94,7 @@ const Home = (props) => {
                     }
                 </div>
             </div>
+
         </>
     )
 }

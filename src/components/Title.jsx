@@ -1,15 +1,15 @@
 import React from 'react'
 
-const Title = (props) => {
-    const {tindex} = props
+export const Title = (props) => {
+    const { tindex } = props
     let title, sub_title;
 
-    if(tindex === '1'){
+    if(tindex ==='1'){
         title = "MD's Pick";
         sub_title = '시선을 사로잡는 스타일링, 제품들을 만나보세요.'
-    }else if (tindex === '2'){
-        title = "여름을 위한 컬렉션";
-        sub_title = '가볍게, 시원하게 썸머 컬렉션으로 여름을 준비해 보세요.'
+    } else if (tindex === '2'){
+        title="여름을 위한 컬렉션"
+        sub_title="가볍게, 시원하게 썸머 컬렉션으로 여름을 준비해 보세요."
     }
 
     return (
@@ -24,5 +24,3 @@ const Title = (props) => {
         </div>
     )
 }
-
-export default Title
